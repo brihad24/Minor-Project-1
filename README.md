@@ -1,3 +1,5 @@
+<center> <h1> Smart Healthcare Support System </h1> </center>
+
 <h2>Abstract</h2>
 Sometimes you come across small problems where you to need consult doctors about your health problems or go to the nearest ones and follow their prescriptions. A few online services will give you the power to communicate directly with the doctors of your choice as and when required for all your small problems. Using these web applications, patients will be able to fill out an online form in just a few seconds before entering the virtual office room. It will also enable you to upload your lab results such as x-ray copies, health history, etc which can be viewed by your referred doctors. Through our project, we aim to create a similar application that will help users get a diagnosis for their disease from the comfort of their homes. Moreover, if the patient chooses, they can also see a list of doctors near them who are available for further consultation/check-ups.
 
