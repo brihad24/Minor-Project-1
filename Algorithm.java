@@ -37,42 +37,86 @@ public class Algorithm{
                 System.out.println("Thank you for choosing the symptoms. Your disease is displayed below");
                 break;
             }
-            if(symptom.equals("back_pain")) // Dengue
+            // Definitive diagnosis
+// Dengue
+            if(symptom.equals("back_pain") || symptom.equals("joint_pain") || symptom.equals("loss_of_appetite") || symptom.equals("pain_behind_the_eyes") || symptom.equals("red_spots_over_body"))
             {
                 DiagnosedDisease = "Dengue";
-            }
-            if(symptom.equals("belly_pain")) // Typhoid
+            } 
+// Typhoid
+            if(symptom.equals("belly_pain") || symptom.equals("constipation") || symptom.equals("toxic_look_(typhos)"))     
             {
                 DiagnosedDisease = "Typhoid";
             }
-            if(symptom.equals("blackheads")) // Acne
+// Acne
+            if(symptom.equals("blackheads") || symptom.equals("pus_filled_pimples") || symptom.equals("scurring"))  
             {
                 DiagnosedDisease = "Acne";
             }
-            if(symptom.equals("blurred_and_distorted_vision")) // Diabetes
+//Diabetes
+            if(symptom.equals("blurred_and_distorted_vision") || symptom.equals("excessive_hunger") ||  symptom.equals ("increased_appetite") ||  symptom.equals("irregular_sugar_level") || symptom.equals("lethargy") || symptom.equals("obesity") || symptom.equals("polyuria") || symptom.equals("restlessness"))  
             {
                 DiagnosedDisease = "Diabetes";
             }
-            if(symptom.equals("breathlessness")) // Pneumonia
+// Pneumonia
+            if(symptom.equals("breathlessness") || symptom.equals("fast_heart_rate") || symptom.equals("rusty sputum"))                                    
             {
                 DiagnosedDisease = "Pneumonia";
             }
-            if(symptom.equals("congestion") || symptom.equals("continuous_sneezing")) // Common Cold
+// Common Cold
+            if(symptom.equals("congestion") || symptom.equals("continuous_sneezing") ||  symptom.equals("loss_of_smell") || symptom.equals("redness_of_eyes") || symptom.equals("runny_nose") || symptom.equals("sinus_pressure") || symptom.equals("swelled_lymph_nodes") || symptom.equals("throat_irritation"))  
             {
                 DiagnosedDisease = "Common Cold";
             }
-            if(symptom.equals("constipation")) // Typhoid
+// Jaundice
+            if(symptom.equals("dark_urine") || symptom.equals("yellowish_skin")) 
             {
-                DiagnosedDisease = "Typhoid";
+                DiagnosedDisease = "Jaundice";
             }
-            if(symptom.equals("dark_urine")) // Jaundice
+// Fungal Infection
+            if(symptom.equals("dischromic_patches") || symptom.equals("nodal_skin_eruptions"))                                                                               
             {
-                DiagnosedDisease = "Dengue";
+                DiagnosedDisease = "FungalInfection";
+            }
+
+            // Probabilistic diagnosis
+            if(symptom.equals("dischromic_patches")) // Fungal Infection symptoms
+            {
+                DiagnosedDisease = "FungalInfection";
+            }
+            if(symptom.equals("dischromic_patches")) // Fungal Infection symptoms
+            {
+                DiagnosedDisease = "FungalInfection";
             }
             if(symptom.equals("dischromic_patches")) // Fungal Infection
             {
                 DiagnosedDisease = "FungalInfection";
             }
+            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            {
+                DiagnosedDisease = "FungalInfection";
+            }
+            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            {
+                DiagnosedDisease = "FungalInfection";
+            }
+            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            {
+                DiagnosedDisease = "FungalInfection";
+            }
+            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            {
+                DiagnosedDisease = "FungalInfection";
+            }
+            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            {
+                DiagnosedDisease = "FungalInfection";
+            }
+            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            {
+                DiagnosedDisease = "FungalInfection";
+            }
+
             else
             {
                 System.out.println("Please enter a symptom from the list above");
