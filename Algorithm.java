@@ -28,10 +28,10 @@ public class Algorithm{
     static void decision()
     {
         Scanner sc = new Scanner(System.in);
-        String DiagnosedDisease = "";
+        String DiagnosedDisease = ".";
         double DiseaseProb[] = new double[9];
 
-        while(1 > 0) // Runs while the statement is true
+        while(true) // Runs while the statement is true
         {
         String symptom = sc.nextLine();
 
@@ -193,46 +193,45 @@ public class Algorithm{
                 {  
                     if(DiseaseProb[i] > max)  
                     max = DiseaseProb[i];  
-                    //System.out.println(DiseaseProb[i]);
+                    System.out.println(DiseaseProb[i]);
                 }  
 
-                if (max == prob_Acne) //Acne
+                if (max == prob_Acne && max != 0.0) //Acne
                 {
                     DiagnosedDisease = "Acne";
                 }
-                if (max == prob_Dengue) // Dengue
+                if (max == prob_Dengue && max != 0.0) // Dengue
                 {
                     DiagnosedDisease = "Dengue";
                 }
-                if (max == prob_Cold)
+                if (max == prob_Cold && max != 0.0) // Cold
                 {
                     DiagnosedDisease = "Cold";
                 }
-                if (max == prob_Diabetes) // Diabetes
+                if (max == prob_Diabetes && max != 0.0) // Diabetes
                 {
                     DiagnosedDisease = "Diabetes";
                 }
-                if (max == prob_Fungal) // Fungal
+                if (max == prob_Fungal && max != 0.0) // Fungal
                 {
                     DiagnosedDisease = "Fungal Infection";
                 }
-                if (max == prob_Jaundice) // Janudice
+                if (max == prob_Jaundice && max != 0.0) // Janudice
                 {
                     DiagnosedDisease = "Jaundice";
                 }
-                if (max == prob_Malaria) // Malaria
+                if (max == prob_Malaria && max != 0.0) // Malaria
                 {
                     DiagnosedDisease = "Malaria";
                 }
-                if (max == prob_Typhoid) // Typhoid
+                if (max == prob_Typhoid && max != 0.0) // Typhoid
                 {
                     DiagnosedDisease = "Typhoid";
                 }
-                if (max == prob_Pneumonia) // Pneumonia
+                if (max == prob_Pneumonia && max != 0.0) // Pneumonia
                 {
                     DiagnosedDisease = "Pneumonia";
                 }
-
                 else
                 {
                     System.out.println("Please enter symptom from above");
@@ -244,6 +243,7 @@ public class Algorithm{
         System.out.println(DiagnosedDisease);
         sc.close();
     }
+
     public static void main(String[] args) 
     {
         System.out.println("Disclaimer: This is an automated program that works on a dataset made my physicians. Although the diagnosis is fairly accurate, please consult a doctor to be safe and not take this program at face value");
