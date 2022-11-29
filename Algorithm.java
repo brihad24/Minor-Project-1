@@ -1,23 +1,25 @@
 import java.util.Scanner;
 
 public class Algorithm{
-    static int prob_fungalItch, prob_fungalRash, prob_fungalSkinNodes, prob_fungalPatches;
+    static double prob_fungalItch = 0.47, prob_fungalRash = 0.26, prob_fungalSkinNodes, prob_fungalPatches;
 
-    static int prob_diabetesWeightLoss, prob_diabetesFatigue, prob_diabetesRestless, prob_diabetesLaze, prob_diabetesSugar, prob_diabetesObesity, prob_diabetesVision, prob_diabetesHunger, prob_diabetesAppetite, prob_diabetesDarkUrine, prob_diabetesMoreUrine;
+    static double prob_diabetesWeightLoss = 0.5, prob_diabetesFatigue = 0.16, prob_diabetesRestless = 1, prob_diabetesLaze, prob_diabetesSugar, prob_diabetesObesity, prob_diabetesVision, prob_diabetesHunger, prob_diabetesAppetite, prob_diabetesMoreUrine;
 
-    static int prob_jaundiceItch, prob_jaundiceVomit, prob_jaundiceYellowSkin, prob_jaundiceFatigue, prob_jaundiceWeightLoss, prob_jaundiceFever, prob_jaundiceDarkUrine, prob_jaundiceAbdomenPain;
+    static double prob_jaundiceItch = 0.53, prob_jaundiceVomit = 0.27, prob_jaundiceYellowSkin, prob_jaundiceFatigue = 0.16, prob_jaundiceWeightLoss = 0.5, prob_jaundiceFever = 0.16, prob_jaundiceDarkUrine, prob_jaundiceAbdomenPain = 0.5;
 
-    static int prob_malariaChills, prob_malariaVomit, prob_malariaFever, prob_malariaSweat, prob_malariaHeadache, prob_malariaNausea, prob_malariaDiarrhoea, prob_malariaMusclePain;
+    static double prob_malariaChills = 0.19, prob_malariaVomit = 0.19, prob_malariaFever = 0.18, prob_malariaSweat = 0.5, prob_malariaHeadache = 0.24, prob_malariaNausea = 0.32, prob_malariaDiarrhoea = 0.47, prob_malariaMusclePain = 0.33;
 
-    static int prob_dengueRash, prob_dengueChills, prob_dengueVomit, prob_dengueJointPain, prob_dengueFever, prob_dengueHeadache, prob_dengueNausea, prob_dengueAppetite, prob_dengueEyePain, prob_dengueBackPain, prob_dengueMusclePain, prob_dengueMalaise, prob_dengueRedSpots;
+    static double prob_dengueRash = 0.31, prob_dengueChills = 0.19, prob_dengueVomit = 0.27, prob_dengueJointPain, prob_dengueFever = 0.18, prob_dengueHeadache = 0.27, prob_dengueNausea = 0.36, prob_dengueAppetite, prob_dengueEyePain, prob_dengueBackPain, prob_dengueMusclePain = 0.37, prob_dengueMalaise = 0.33, prob_dengueRedSpots;
 
-    static int prob_typhoid;
+    static double prob_typhoidChills = 0.22, prob_typhoidVomiting = 0.25, prob_typhoidFatigue = 0.2, prob_typhoidFever = 0.18, prob_typhoidNausea = 0.32, prob_typhoidHeadache = 0.24, prob_typhoidConstipation, prob_typhoidAbdominalPain = 0.5, prob_typhoidDiarrhoea = 0.53, prob_typhoidTyphos, prob_typhoidBellyPain;
 
-    static int prob_cold;
+    static double prob_coldSneezing, prob_coldChills = 0.19, prob_coldFatigue = 0.16, prob_coldCough = 0.5, prob_coldFever = 0.16, prob_coldHeadache = 0.24, prob_coldSwelledLymphNodes, prob_coldMalaise = 0.29, prob_coldPhlegm = 0.53, prob_coldThroatIrritation, prob_coldRedEye, prob_coldSinusPressure, prob_coldRunnyNose, prob_coldCongestion, prob_coldChestPain = 0.45, prob_coldSmellLoss, prob_coldMusclePain  = 0.29;
 
-    static int prob_pneumonia;
+    static double prob_pneumoniaChills = 0.19, prob_pneumoniaFatigue = 0.16, prob_pneumoniaCough = 0.5, prob_pneumoniaFever = 0.16, prob_pneumoniaBreathlessness, prob_pneumoniaSweating = 0.5, prob_pneumoniaMalaise = 0.37, prob_pneumoniaChestPain = 0.55, prob_pneumoniaFastHeartRate, prob_pneumoniaRustySuptum, prob_pneumoniaPhlegm = 0.47;
 
-    static int prob_acne;
+    static double prob_acneRash = 0.38, prob_acnePus, prob_acneBlackhead, prob_acneScurring;
+
+    static int abdpainChosen = 0, chestpainChosen = 0, chillsChosen = 0, coughChosen = 0, diarrhoeaChosen = 0, fatigueChosen = 0, feverChosen = 0, headacheChosen = 0, high_feverChosen = 0, malaiseChosen = 0, muscle_painChosen = 0, nauseaChosen = 0, phlegmChosen = 0, skin_rashChosen = 0, sweatingChosen = 0, vomitingChosen = 0, weight_lossChosen = 0, itchingChosen = 0; 
 
     static void values(){
         return;
@@ -26,9 +28,10 @@ public class Algorithm{
     static void decision()
     {
         Scanner sc = new Scanner(System.in);
-        String DiagnosedDisease = "";
+        String DiagnosedDisease = ".";
+        double DiseaseProb[] = new double[9];
 
-        while(1 > 0) // Runs while the statement is true
+        while(true) // Runs while the statement is true
         {
         String symptom = sc.nextLine();
 
@@ -37,7 +40,7 @@ public class Algorithm{
                 System.out.println("Thank you for choosing the symptoms. Your disease is displayed below");
                 break;
             }
-            // Definitive diagnosis
+// Definitive diagnosis
 // Dengue
             if(symptom.equals("back_pain") || symptom.equals("joint_pain") || symptom.equals("loss_of_appetite") || symptom.equals("pain_behind_the_eyes") || symptom.equals("red_spots_over_body"))
             {
@@ -59,7 +62,7 @@ public class Algorithm{
                 DiagnosedDisease = "Diabetes";
             }
 // Pneumonia
-            if(symptom.equals("breathlessness") || symptom.equals("fast_heart_rate") || symptom.equals("rusty sputum"))                                    
+            if(symptom.equals("breathlessness") || symptom.equals("fast_heart_rate") || symptom.equals("rusty sputum"))
             {
                 DiagnosedDisease = "Pneumonia";
             }
@@ -79,52 +82,168 @@ public class Algorithm{
                 DiagnosedDisease = "FungalInfection";
             }
 
-            // Probabilistic diagnosis
-            if(symptom.equals("dischromic_patches")) // Fungal Infection symptoms
+            System.out.println(DiagnosedDisease);
+// Probabilistic diagnosis
+            if(symptom.equals("abdominal_pain")) 
             {
-                DiagnosedDisease = "FungalInfection";
+                abdpainChosen = 1;
             }
-            if(symptom.equals("dischromic_patches")) // Fungal Infection symptoms
+            if(symptom.equals("chest_pain"))  
             {
-                DiagnosedDisease = "FungalInfection";
+                chestpainChosen = 1;
             }
-            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            if(symptom.equals("chills")) 
             {
-                DiagnosedDisease = "FungalInfection";
+                chillsChosen = 1;
             }
-            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            if(symptom.equals("cough")) 
             {
-                DiagnosedDisease = "FungalInfection";
+                coughChosen = 1;
             }
-            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            if(symptom.equals("diarrhoea")) 
             {
-                DiagnosedDisease = "FungalInfection";
+                diarrhoeaChosen = 1;
             }
-            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            if(symptom.equals("fatigue")) 
             {
-                DiagnosedDisease = "FungalInfection";
+                fatigueChosen = 1;
             }
-            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            if(symptom.equals("high_fever")) 
             {
-                DiagnosedDisease = "FungalInfection";
+                feverChosen = 1;
             }
-            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            if(symptom.equals("headache")) 
             {
-                DiagnosedDisease = "FungalInfection";
+                headacheChosen = 1;
             }
-            if(symptom.equals("dischromic_patches")) // Fungal Infection
+            if(symptom.equals("high_fever")) 
             {
-                DiagnosedDisease = "FungalInfection";
+                high_feverChosen = 1;
+            }
+            if(symptom.equals("malaise")) 
+            {
+                malaiseChosen = 1;
+            }
+            if(symptom.equals("muscle_pain"))  
+            {
+                muscle_painChosen = 1;
+            }
+            if(symptom.equals("nausea"))  
+            {
+                nauseaChosen = 1;
+            }
+            if(symptom.equals("phlegm"))  
+            {
+                phlegmChosen = 1;
+            }
+            if(symptom.equals("skin_rash"))  
+            {
+                skin_rashChosen = 1;
+            }
+            if(symptom.equals("sweating"))  
+            {
+                sweatingChosen = 1;
+            }
+            if(symptom.equals("vomiting"))  
+            {
+                vomitingChosen = 1;
+            }
+            if(symptom.equals("weight_loss"))  
+            {
+                weight_lossChosen = 1;
+            }
+            if(symptom.equals("itching"))  
+            {
+                itchingChosen = 1;
             }
 
             else
             {
-                System.out.println("Please enter a symptom from the list above");
+                System.out.println(DiagnosedDisease);
+                double prob_Fungal = (prob_fungalItch * itchingChosen) + (prob_fungalRash * skin_rashChosen);
+                DiseaseProb[0] = prob_Fungal;
+
+                double prob_Diabetes = (prob_diabetesWeightLoss * weight_lossChosen) + (prob_diabetesFatigue * fatigueChosen);
+                DiseaseProb[1] = prob_Diabetes;
+
+                double prob_Jaundice = (prob_jaundiceItch * itchingChosen) + (prob_jaundiceVomit * vomitingChosen) + (prob_jaundiceFatigue * fatigueChosen) + (prob_jaundiceWeightLoss * weight_lossChosen) + (prob_jaundiceFever * feverChosen) + (prob_jaundiceAbdomenPain * abdpainChosen);
+                DiseaseProb[2] = prob_Jaundice;
+
+                double prob_Malaria = (prob_malariaChills * chillsChosen) + (prob_malariaVomit * vomitingChosen) + (prob_malariaFever * feverChosen) +  (prob_malariaSweat * sweatingChosen) + (prob_malariaHeadache * headacheChosen) + (prob_malariaNausea * nauseaChosen) + (prob_malariaDiarrhoea * diarrhoeaChosen) + (prob_malariaMusclePain * muscle_painChosen);
+                DiseaseProb[3] = prob_Malaria;
+
+                double prob_Dengue = (prob_dengueRash * skin_rashChosen) + (prob_dengueChills * chillsChosen) + (prob_dengueVomit * vomitingChosen) + (prob_dengueFever * feverChosen) + (prob_dengueHeadache * headacheChosen) + (prob_dengueNausea * nauseaChosen) + (prob_dengueMusclePain * muscle_painChosen) +  (prob_dengueMalaise * malaiseChosen);
+                DiseaseProb[4] = prob_Dengue;
+
+                double prob_Typhoid = (prob_typhoidChills * chillsChosen) + (prob_typhoidVomiting * vomitingChosen) + (prob_typhoidFatigue * fatigueChosen) + (prob_typhoidFever * feverChosen) + (prob_typhoidNausea * nauseaChosen) + (prob_typhoidHeadache * headacheChosen) + (prob_typhoidAbdominalPain * abdpainChosen) + (prob_typhoidDiarrhoea * diarrhoeaChosen);
+                DiseaseProb[5] = prob_Typhoid;
+
+                double prob_Cold =  (prob_coldChills * chillsChosen) + (prob_coldFatigue * fatigueChosen) + (prob_coldCough * coughChosen) + (prob_coldFever * feverChosen) + ( prob_coldHeadache * headacheChosen) + ( prob_coldMalaise* malaiseChosen) + (prob_coldPhlegm * phlegmChosen) + ( prob_coldChestPain * chestpainChosen) + (prob_coldMusclePain * muscle_painChosen);
+                DiseaseProb[6] = prob_Cold;
+
+                double prob_Pneumonia = (prob_pneumoniaChills * chillsChosen) + (prob_pneumoniaFatigue * fatigueChosen) + (prob_pneumoniaCough * coughChosen) + (prob_pneumoniaFever * feverChosen) + (prob_pneumoniaSweating * sweatingChosen) + ( prob_pneumoniaMalaise * malaiseChosen) + (prob_pneumoniaChestPain * chestpainChosen) + (prob_pneumoniaPhlegm * phlegmChosen);
+                DiseaseProb[7] = prob_Pneumonia;
+
+                double prob_Acne = (prob_acneRash * skin_rashChosen);
+                DiseaseProb[8] = prob_Acne;
+
+                Double max = DiseaseProb[0];  
+                
+                for (int i = 0; i < DiseaseProb.length; i++) 
+                {  
+                    if(DiseaseProb[i] > max)  
+                    max = DiseaseProb[i];  
+                    System.out.println(DiseaseProb[i]);
+                }  
+
+                if (max == prob_Acne && max != 0.0) //Acne
+                {
+                    DiagnosedDisease = "Acne";
+                }
+                if (max == prob_Dengue && max != 0.0) // Dengue
+                {
+                    DiagnosedDisease = "Dengue";
+                }
+                if (max == prob_Cold && max != 0.0) // Cold
+                {
+                    DiagnosedDisease = "Cold";
+                }
+                if (max == prob_Diabetes && max != 0.0) // Diabetes
+                {
+                    DiagnosedDisease = "Diabetes";
+                }
+                if (max == prob_Fungal && max != 0.0) // Fungal
+                {
+                    DiagnosedDisease = "Fungal Infection";
+                }
+                if (max == prob_Jaundice && max != 0.0) // Janudice
+                {
+                    DiagnosedDisease = "Jaundice";
+                }
+                if (max == prob_Malaria && max != 0.0) // Malaria
+                {
+                    DiagnosedDisease = "Malaria";
+                }
+                if (max == prob_Typhoid && max != 0.0) // Typhoid
+                {
+                    DiagnosedDisease = "Typhoid";
+                }
+                if (max == prob_Pneumonia && max != 0.0) // Pneumonia
+                {
+                    DiagnosedDisease = "Pneumonia";
+                }
+                else
+                {
+                    System.out.println("Please enter symptom from above");
+                }
+                System.out.println(DiagnosedDisease);
+                // System.out.println("Please enter a symptom from the list above");
             }
         }
         System.out.println(DiagnosedDisease);
         sc.close();
     }
+
     public static void main(String[] args) 
     {
         System.out.println("Disclaimer: This is an automated program that works on a dataset made my physicians. Although the diagnosis is fairly accurate, please consult a doctor to be safe and not take this program at face value");
