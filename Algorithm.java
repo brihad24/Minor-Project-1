@@ -28,12 +28,12 @@ public class Algorithm{
     static void decision()
     {
         Scanner sc = new Scanner(System.in);
-        String DiagnosedDisease = ".";
+        String DiagnosedDisease = "";
         double DiseaseProb[] = new double[9];
 
         while(true) // Runs while the statement is true
         {
-        String symptom = sc.nextLine();
+        String symptom = sc.next();
 
             if(symptom.equals("done"))
             {
@@ -62,7 +62,7 @@ public class Algorithm{
                 DiagnosedDisease = "Diabetes";
             }
 // Pneumonia
-            if(symptom.equals("breathlessness") || symptom.equals("fast_heart_rate") || symptom.equals("rusty sputum"))
+            if(symptom.equals("breathlessness") || symptom.equals("fast_heart_rate") || symptom.equals("rusty_sputum"))
             {
                 DiagnosedDisease = "Pneumonia";
             }
@@ -82,7 +82,7 @@ public class Algorithm{
                 DiagnosedDisease = "FungalInfection";
             }
 
-            System.out.println(DiagnosedDisease);
+            //System.out.println(DiagnosedDisease);
 // Probabilistic diagnosis
             if(symptom.equals("abdominal_pain")) 
             {
@@ -159,7 +159,9 @@ public class Algorithm{
 
             else
             {
-                System.out.println(DiagnosedDisease);
+                //System.out.println(DiagnosedDisease);
+                //System.out.println(".");
+
                 double prob_Fungal = (prob_fungalItch * itchingChosen) + (prob_fungalRash * skin_rashChosen);
                 DiseaseProb[0] = prob_Fungal;
 
@@ -193,7 +195,7 @@ public class Algorithm{
                 {  
                     if(DiseaseProb[i] > max)  
                     max = DiseaseProb[i];  
-                    System.out.println(DiseaseProb[i]);
+                    //System.out.println(DiseaseProb[i]);
                 }  
 
                 if (max == prob_Acne && max != 0.0) //Acne
@@ -232,11 +234,12 @@ public class Algorithm{
                 {
                     DiagnosedDisease = "Pneumonia";
                 }
-                else
-                {
-                    System.out.println("Please enter symptom from above");
-                }
-                System.out.println(DiagnosedDisease);
+                // else
+                // {
+                //     System.out.println("Please enter symptom from above");
+                // }
+                
+                //System.out.println(DiagnosedDisease);
                 // System.out.println("Please enter a symptom from the list above");
             }
         }
@@ -252,6 +255,7 @@ public class Algorithm{
         System.out.println("List of symptoms:" + '\n' + "A:" + " abdominal_pain" + '\n' + "B:" + " back_pain, belly_pain, blackheads, blurred_and_distorted_vision, breathlessness" + '\n' + "C:" + " chest_pain, chills, congestion, constipation, continuous_sneezing, cough" + '\n' + "D:" + " dark_urine, diarrhoea, dischromic _patches" + '\n' + "E:" + " excessive_hunger" + '\n' + "F:" + " fast_heart_rate, fatigue" + '\n' + "G:" + "" + '\n' + "H:" + " headache, high_fever" + '\n' + "I:" + " increased_appetite, irregular_sugar_level, itching" + '\n' + "J:" + " joint_pain" + '\n' + "K:" + "" + '\n' + "L:" + " lethargy, loss_of_appetite, loss_of_smell, malaise" + '\n' + "M:" + " muscle_pain, nausea" + '\n' + "N:" + " nodal_skin_eruptions" + '\n' + "O:" + " obesity, " + '\n' + "P:" + "pain_behind_the_eyes, phlegm, polyuria, pus_filled_pimples" + '\n' + "Q:" + "" + '\n' + "R:" + " red_spots_over_body, redness_of_eyes, restlessness, runny_nose, rusty_sputum" + '\n' + "S:" + " scurring, sinus_pressure, skin_rash, sweating, swelled_lymph_nodes" + '\n' + "T:" + " throat_irritation, toxic_look_(typhos)" + '\n' + "U:" + "" + '\n' + "V:" + " vomiting" + '\n' + "W:" + " weight_loss" + '\n' + "X:" + "" + '\n' + "Y:" + " yellowish_skin" + '\n' + "Z:" + "");
 
         decision();
+
             /*
             Write an if else condition for each symptom
             For example
