@@ -77,20 +77,62 @@
 						select the types of data structures
 						that we need -->
 					<select class="mul-select" multiple="true" id="Headache">
-						<option  value="Stack">Headache</option>
-						<option value="Queue">Cold</option>
-						<option value="Linked-List">Cough</option>
-						<option value="Heap">Fever</option>
-						<option value="Binary-Tree">X</option>
-						<option value="Graph">Y</option>
-						<option value="Array">z</option>
-                        <option value="Stack">Headache</option>
-						<option value="Queue">Cold</option>
-						<option value="Linked-List">Cough</option>
-						<option value="Heap">Fever</option>
-						<option value="Binary-Tree">X</option>
-						<option value="Graph">Y</option>
-						<option value="Array">z</option>
+						<option  value="abdominal_pain">abdominal_pain</option>
+						<option value="back_pain">back_pain</option>
+						<option value="belly_pain">belly_pain</option>
+						<option value="blackheads">blackheads</option>
+						<option value="blurred_and_distorted_vision">blurred_and_distorted_vision</option>
+						<option value="breathlessness">breathlessness</option>
+						<option value="chest_pain">chest_pain</option>
+
+                        <option value="chills">chills</option>
+						<option value="congestion">congestion</option>
+						<option value="constipation">constipation</option>
+						<option value="continuous_sneezing">continuous_sneezing</option>
+						<option value="cough">cough</option>
+						<option value="dark_urine">dark_urine</option>
+						<option value="dischromic_patches">dischromic_patches</option>
+
+						<option value="excessive_hunger">excessive_hunger</option>
+						<option value="fast_heart_rate">fast_heart_rate</option>
+						<option value="fatigue">fatigue</option>
+						<option value="headache">headache</option>
+						<option value="high_fever">high_fever</option>
+						<option value="increased_appetite">increased_appetite</option>
+						<option value="irregular_sugar_level">irregular_sugar_level</option>
+
+						<option value="itching">itching</option>
+						<option value="joint_pain">joint_pain</option>
+						<option value="lethargy">lethargy</option>
+						<option value="loss_of_appetite">loss_of_appetite</option>
+						<option value="loss_of_smell">loss_of_smell</option>
+						<option value="malaise">malaise</option>
+						<option value="muscle_pain">muscle_pain</option>
+
+						<option value="nausea">nausea</option>
+						<option value="nodal_skin_eruptions">nodal_skin_eruptions</option>
+						<option value="obesity">obesity</option>
+						<option value="pain_behind_the_eyes">pain_behind_the_eyes</option>
+						<option value="phlegm">phlegm</option>
+						<option value="polyuria">polyuria</option>
+						<option value="pus_filled_pimples">pus_filled_pimples</option>
+
+						<option value="red_spots_over_body">red_spots_over_body</option>
+						<option value="redness_of_eyes">redness_of_eyes</option>
+						<option value="restlessness">restlessness</option>
+						<option value="runny_nose">runny_nose</option>
+						<option value="rusty_sputum">rusty_sputum</option>
+						<option value="scurring">scurring</option>
+						<option value="sinus_pressure">sinus_pressure</option>
+
+						<option value="skin_rash">skin_rash</option>
+						<option value="sweating">sweating</option>
+						<option value="swelled_lymph_nodes">swelled_lymph_nodes</option>
+						<option value="throat_irritation">throat_irritation</option>
+						<option value="toxic_look_(typhos)">toxic_look_(typhos)</option>
+						<option value="vomiting">vomiting</option>
+						<option value="weight_loss">weight_loss</option>
+						<option value="yellowish_skin">yellowish_skin</option>
 					</select>
 					<input type="button" id="submit" onclick="submitData()" value="Submit">
 					<div id="showJson"></div>
@@ -118,7 +160,10 @@
 				"symtoms": ""
 			 }
 			 jsonObject.symptoms= id;
-			 var str=JSON.stringyfy(jsonObject);
+			//  console.log(id)
+			//  var str=JSON.stringyfy(jsonObject);
+			 var str = jsonObject;
+			 console.log(str)
 			//  document.write(str);
 			document.getElementById('showJson').innerHTML=str;
 

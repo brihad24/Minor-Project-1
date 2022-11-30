@@ -8,8 +8,8 @@ public class Main {
         fetchCSVData.display();
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter your ");
-       String dis =sc.nextLine();
-       
+        String dis =sc.nextLine();
+        
         fetchCSVData.findNearByDoctor(dis);
     }
 }
