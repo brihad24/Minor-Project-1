@@ -1,0 +1,53 @@
+.bg-dark{
+
+    /* width:50%; */
+    /* border:1px solid rgba(11,78,179); */
+    margin-top: 200px;
+    background-color: #16a085 !important;
+
+}
+/* .form{
+    margin: 0 0;
+} */
+/* .col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 0%;
+} */
+
+.btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: #16a085;;
+    color: #f3f3f3;
+    text-align: center;
+    cursor: pointer;
+
+
+}
+.width-50{
+    width:50%;
+}
+.ml-auto{
+    margin-left: auto;
+}
+
+#submit{
+    margin-top: 20px;
+    margin-left:90px;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid white 1px;
+
+
+
+
+    color: black;
+
+
+}
+button:hover{
+    color: #16a085;
+}

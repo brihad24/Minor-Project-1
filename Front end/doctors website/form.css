@@ -1,0 +1,112 @@
+:root{
+    --primary-color:#16a085;
+}
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+body {
+font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+display: grid;
+place-items: center;
+min-height: 100vh;
+}
+label{
+    display:block;
+
+margin-bottom: 0.5rem;
+}
+
+/* Form */
+.form1{
+width: clamp(400px, 30%, 430px);
+
+border: 1px solid #ccc; 
+border-radius: 0.35rem;
+padding: 1.5rem;
+}
+input{
+    display: block;
+width: 100%;
+padding: 0.75rem;
+border: 1px solid #ccc;
+}
+.input-group {
+margin: 2rem 0;
+}
+/* Button */
+.btn {
+padding: 0.75rem;
+display: block;
+text-decoration: none;
+/* background-color: var(--primary-color); */
+color: white;
+text-align: center;
+cursor: pointer;
+background-color: #16a085;;
+
+
+}
+.width-50{
+    width:50%;
+}
+.ml-auto{
+margin-left: auto;
+}
+.text-center{
+    text-align:center;
+}
+
+/* selfd css */
+.bg-dark{
+  
+    /* width:50%; */
+    /* border:1px solid rgba(11,78,179); */
+    margin-top: 200px;
+
+}
+/* .form{
+    margin: 0 0;
+} */
+/* .col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 0%;
+} */
+
+
+.form-step{
+    display:none;
+}
+.form-step-active{
+    display:block;
+}
+
+  
+    *{
+        margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body{
+        justify-content: center;
+        align-items: center;
+        /* min-height:; */
+        width: 50%;
+        margin-left: 25%;
+    }
+    .form{
+        margin: 0 0;
+    }
+    .mul-select {
+        min-width: 100%;
+    }
+    
+    h1 {
+        color: white;
+    }
+   .pt-4{
+    color: black !important;
+   }
+    
+
