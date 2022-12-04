@@ -185,18 +185,28 @@
        return false;
     }
 });
-    var maxCheckedCount = 5;
+  var minCheckedCount = 1;
+  var minCheckedAlertMessage = 'Please make sure to at least select 3!';
+  var maxCheckedCount = 5;
 var maxCheckedAlertMessage = 'Woops! Too many selected!';
+
+  jQuery('select').change(function(event) {
+      var n = $(this).children(':selected').length;
+      if(n >= minCheckedCount && n<4){
+          // $(this).children().prop('selected');
+          alert(minCheckedAlertMessage);
+
+      }
+  });
 
 jQuery('select').change(function(event) {
     var n = $(this).children(':selected').length;
     if(n >= maxCheckedCount){
         // $(this).children().prop('selected');
         alert(maxCheckedAlertMessage);
-        
+
     }
 });
-
 </script>
 
 </body>
