@@ -22,6 +22,10 @@
                     "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js">
     </script>
 
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+
+</script> -->
+
     <!-- Default bootstrap CSS link taken from the
         bootstrap website-->
     <link rel="stylesheet" href=
@@ -58,10 +62,12 @@
 </head>
 
 <body>
+    <div class="container1">
 <div class="container-fluid bg-dark" style="min-height: 50vh;">
     <div class="text-center">
         <h1 class="pt-4" style="color: white">SELF DIAGNOSIS</h1>
         <h1 class="py-4">Select All the Symptoms</h1>
+        <h6 style="color: white;">Kindly select atleast three Symptoms </h6>
     </div>
 
     <!-- These modifications are done to make the webpage
@@ -74,7 +80,7 @@
                 <!-- Various options in drop down menu to
                     select the types of data structures
                     that we need -->
-                <select class="mul-select" multiple="true" id="Headache">
+                <select class="mul-select" multiple="true" id="Headache" multiple size=51>
                     <option  value="abdominal_pain">abdominal_pain</option>
                     <option value="back_pain">back_pain</option>
                     <option value="belly_pain">belly_pain</option>
@@ -136,6 +142,7 @@
 <!--                <div id="showJson"></div>-->
             </div>
         </div>
+        </div>
     </div>
     <!-- <div class="">
         <a href="#" class="btn btn-next width-50 ml-auto ">Next</a>
@@ -145,6 +152,8 @@
 
 <!-- JavaScript code to enable the drop down function -->
 <script>
+  
+
     let str;
 
     function submitData(){
@@ -163,7 +172,31 @@
         link.download = "symptoms.txt";
         link.click();
         URL.revokeObjectURL(link.href);
+
+
     }
+
+    
+    
+    jQuery('.submit').click(function()
+{
+    if($('select').children(':selected').length <= 2) {
+       alert('Keep Adding');
+       return false;
+    }
+});
+    var maxCheckedCount = 5;
+var maxCheckedAlertMessage = 'Woops! Too many selected!';
+
+jQuery('select').change(function(event) {
+    var n = $(this).children(':selected').length;
+    if(n >= maxCheckedCount){
+        // $(this).children().prop('selected');
+        alert(maxCheckedAlertMessage);
+        
+    }
+});
+
 </script>
 
 </body>
