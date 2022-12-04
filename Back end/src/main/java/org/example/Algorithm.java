@@ -42,7 +42,7 @@ public class Algorithm{
     static void readTxt() throws FileNotFoundException  
     {
         String token1 = "";
-        File text = new File("D:\\College stuff\\3rd year\\Minor\\Project 2.0\\Back end\\src\\main\\java\\org\\example\\symptoms.txt");
+        File text = new File("D:\\Coding\\Minor-Project-1\\Back end\\src\\main\\java\\org\\example\\symptoms.txt");
         Scanner inFile1 = new Scanner(text);
 
         List<String> temps = new ArrayList<String>();
@@ -182,7 +182,7 @@ public class Algorithm{
         System.out.println("You have a " + decfor.format(Disease1chance) + "% chance that you have " + DiagnosedDisease1);
         System.out.println("You have a " + decfor.format(Disease2chance) + "% chance that you have " + DiagnosedDisease2);
         System.out.println("You have a " + decfor.format(Disease3chance) + "% chance that you have " + DiagnosedDisease3);
-        sc.close();
+        // sc.close();
     }
 
     public static void main(String[] args) throws FileNotFoundException 
@@ -198,16 +198,19 @@ public class Algorithm{
 
         System.out.println("Would you like to see a list of doctors? Yes (or) No");
 
-        if(sc.nextLine().toLowerCase().equals("Yes"))
+        String YesNo = sc.next();
+        if(YesNo.toLowerCase().equals("yes"))
         {
             System.out.println("Enter your location: ");
-            loc = sc.nextLine();
+            loc = sc.next();
             fetchCSVData.findNearByDoctor(TopDiseases, loc);
+            System.out.println("Thank you for using our app :)");
         }
 
         else
         {
             System.out.println("Thank you for using our app :)");
         }
+        // sc.close();
     }
 }

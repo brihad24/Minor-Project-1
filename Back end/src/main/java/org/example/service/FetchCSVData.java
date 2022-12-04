@@ -16,7 +16,7 @@ public class FetchCSVData {
 
     public void fetchDoctorCSVData() {
         try {
-            FileReader file = new FileReader("C:\\Users\\DELL\\Downloads\\Pratham-Test\\data\\doctor.csv"); // filepath change
+            FileReader file = new FileReader("D:\\Coding\\Minor-Project-1\\Back end\\data\\doctor.csv"); // filepath change
             BufferedReader br = new BufferedReader(file);
             while ((space = br.readLine()) != null) {
                 String[] dr = space.split(splitBy);
@@ -42,7 +42,7 @@ public class FetchCSVData {
 
     public void fetchDiseaseCSVData() {
         try {
-            FileReader file = new FileReader("C:\\Users\\DELL\\Downloads\\Pratham-Test\\data\\disease.csv"); // filepath change
+            FileReader file = new FileReader("D:\\Coding\\Minor-Project-1\\Back end\\data\\disease.csv"); // filepath change
             BufferedReader br = new BufferedReader(file);
             while ((space = br.readLine()) != null) {
                 String[] di = space.split(splitBy);
